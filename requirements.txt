@@ -1,2 +1,2 @@
 Flask==2.2.2
-brotlipy
+brotlipy==0.7.0
