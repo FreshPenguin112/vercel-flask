@@ -1,11 +1,12 @@
 from flask import Flask
+from brotlipy import compress, decompress
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hello, World!'
+@app.route('/c/<x>')
+def home(x):
+    return compress(x)
 
-@app.route('/about')
-def about():
-    return 'About'
+@app.route('/d/<x>')
+def about(x):
+    return decompress(x)
